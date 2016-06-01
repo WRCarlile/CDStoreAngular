@@ -11,6 +11,7 @@ import { Album } from './album.model';
     <label>{{ album.name }}, {{ album.artist }}, {{ album.genre }}, {{ album.price }}</label>
   </div>
   `
+
 })
 export class AlbumComponent {
   public album: Album;

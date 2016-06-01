@@ -20,12 +20,14 @@ import { CartPipe } from './cart.pipe';
     (click)="albumClicked(currentAlbum)"
     [class.selected]="currentAlbum === selectedAlbum"
     [album]="currentAlbum">
-    {{total}}
   </album-display>
+
+  <h3 (change) = "addTotal(total)">{{total}}</h3>
 
   <edit-album-details *ngIf="selectedAlbum" [album]="selectedAlbum">
   </edit-album-details>
   <new-album (onSubmitNewAlbum)="createAlbum($event)"></new-album>
+
   `
 })
 
@@ -52,8 +54,21 @@ export class AlbumListComponent {
     );
   }
 
+  // addTotal(total){
+  //   if( this.filterCart === "purchased" )
+  //   {
+  //     this.total += 9.99;
+  //   }
+  // }
+
   onChange(filterOption) {
     this.filterCart = filterOption;
-    this.total += 9.99;
+    this.total = 0;
+
+    for ( var album of this.albumList ) {
+      if ( album.purchased ){
+        this.total += 9.99;
+      }
+    }
   }
 }
