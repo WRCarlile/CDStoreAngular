@@ -7,11 +7,11 @@ import {Album} from './album.model';
   template: `
   <div class="album-form">
     <h3>Create Album:</h3>
-    <input placeholder="Name" class="col-sm-8 input-lg" #newName>
-    <input placeholder="Genre" class="col-sm-8 input-lg" #newGenre>
-    <input placeholder="Artist" class="col-sm-8 input-lg" #newArtist>
-    <input placeholder="Price" class="col-sm-8 input-lg" #newPrice>
-    <br><br><br><br><br><br><br><br>
+    <input placeholder="Name" class="input-lg album-form" #newName required>
+    <input placeholder="Genre" class="input-lg album-form" #newGenre required>
+    <input placeholder="Artist" class="input-lg album-form" #newArtist required>
+    <input placeholder="Price" class="input-lg album-form" #newPrice required>
+    <br>
   <button (click)="addAlbum(newName, newGenre, newArtist, newPrice)" class="btn-success btn-lg add-button">Add</button>
   </div>
   `
