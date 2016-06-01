@@ -1,0 +1,21 @@
+{
+  "name": "cdStore",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Ryan Carlile <ryancarlile@gmail.com>",
+    "Blake Bless <blakebless7@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}
