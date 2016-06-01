@@ -15,7 +15,6 @@ import { Album } from './album.model';
 })
 export class AlbumComponent {
   public album: Album;
-  public total: number = 0;
   togglePurchased(setState: boolean){
     this.album.purchased = setState;
   }

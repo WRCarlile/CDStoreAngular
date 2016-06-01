@@ -7,18 +7,28 @@ import {Album} from './album.model';
   template: `
   <div class="album-form">
     <h3>Create Album:</h3>
-    <input placeholder="Description" class="col-sm-8 input-lg" #newDescription>
-  <button (click)="addAlbum(newDescription)" class="btn-success btn-lg add-button">Add</button>
+    <input placeholder="Name" class="col-sm-8 input-lg" #newName>
+    <input placeholder="Genre" class="col-sm-8 input-lg" #newGenre>
+    <input placeholder="Artist" class="col-sm-8 input-lg" #newArtist>
+    <input placeholder="Price" class="col-sm-8 input-lg" #newPrice>
+    <br><br><br><br><br><br><br><br>
+  <button (click)="addAlbum(newName, newGenre, newArtist, newPrice)" class="btn-success btn-lg add-button">Add</button>
   </div>
   `
 })
 export class NewAlbumComponent {
-  public onSubmitNewAlbum: EventEmitter<String>;
+  public onSubmitNewAlbum: EventEmitter<Album>;
   constructor(){
     this.onSubmitNewAlbum = new EventEmitter();
   }
-  addAlbum(userDescription: HTMLInputElement){
-    this.onSubmitNewAlbum.emit(userDescription.value);
-    userDescription.value = "";
+  addAlbum(userName: HTMLInputElement, userGenre: HTMLInputElement, userArtist: HTMLInputElement, userPrice: HTMLInputElement){
+    var album = new Album(userName.value, userArtist.value, userGenre.value, parseInt(userPrice.value), 0);
+    this.onSubmitNewAlbum.emit(album);
+    userName.value = "";
+    userGenre.value = "";
+    userArtist.value = "";
+    userPrice.value = "";
+    // this.onSubmitNewAlbum.emit(userDescription.value);
+    // userDescription.value = "";
   }
 }

@@ -20,10 +20,10 @@ export class AppComponent {
   public albums: Album[];
   constructor(){
     this.albums = [
-      new Album("Best Album", "Bill", "Rock", 0),
-      new Album("Good Album", "Bill", "Pop", 1),
-      new Album("Alright Album", "Bill", "Jazz", 2),
-      new Album("The Album", "Bill", "Reggae", 3)
+      new Album("Best Album", "Bill", "Rock", 10.00, 0),
+      new Album("Good Album", "Bill", "Pop", 5.00, 1),
+      new Album("Alright Album", "Bill", "Jazz", 100.00, 2),
+      new Album("The Album", "Bill", "Reggae", 20.00, 3)
     ];
   }
   albumWasSelected(clickedAlbum: Album): void {
